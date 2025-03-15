@@ -5,6 +5,15 @@ class MessagesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Placeholder();
+    return Column(
+      children: [
+        DropdownMenu(
+          width: double.infinity,
+          hintText: "Inbox",
+          dropdownMenuEntries: [],
+        ),
+        Divider(),
+      ],
+    );
   }
 }

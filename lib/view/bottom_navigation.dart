@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:indeed_clone/colors/colors.dart';
+import 'package:indeed_clone/constants/colors/colors.dart';
 import 'package:indeed_clone/view/homescreen/home_screen.dart';
 import 'package:indeed_clone/view/messages/messages_screen.dart';
-import 'package:indeed_clone/view/my_jobs/jobs_screen.dart';
+import 'package:indeed_clone/view/my_jobs/my_jobs_screen.dart';
 import 'package:indeed_clone/view/profile/profile_screen.dart';
 
 class BottomNavigation extends StatefulWidget {
@@ -15,7 +15,7 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigationState extends State<BottomNavigation> {
   List<Widget> screens = [
     HomeScreen(),
-    JobsScreen(),
+    MyJobsScreen(),
     MessagesScreen(),
     ProfileScreen(),
   ];

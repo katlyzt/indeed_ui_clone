@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:indeed_clone/widgets/job_card.dart';
+import 'package:indeed_clone/constants/widgets/job_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
