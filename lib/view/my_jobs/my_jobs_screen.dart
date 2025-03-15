@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:indeed_clone/constants/colors/colors.dart';
 import 'package:indeed_clone/view/bottom_navigation.dart';
-import 'package:indeed_clone/view/homescreen/home_screen.dart';
 
 class MyJobsScreen extends StatelessWidget {
   const MyJobsScreen({super.key});
@@ -21,27 +21,63 @@ class MyJobsScreen extends StatelessWidget {
               Text("Archived"),
             ],
           ),
-          Text(
-            "No Jobs saved yet",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+          Expanded(
+            child: TabBarView(
+              children: [
+                _savedTabs(context),
+                _appliedTab(),
+                _interViewTab(),
+                _archivedTab(),
+              ],
+            ),
           ),
-          Text(
-            "Jobs you save appear here",
-            style: TextStyle(fontSize: 15, color: Colors.grey),
-          ),
-          textButton(context),
-          elevatedButton(context),
         ],
       ),
     );
   }
 
-  //find jjobs button
+  //saved jobs tab contents
+  Widget _savedTabs(BuildContext context) {
+    return Column(
+      children: [
+        Image.asset("assets/images/indeed.jpg", height: 250),
+        Text(
+          "No Jobs saved yet",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+        ),
+        SizedBox(height: 10),
+        Text(
+          "Jobs you save appear here",
+          style: TextStyle(fontSize: 15, color: Colors.grey),
+        ),
+        SizedBox(height: 10),
+        textButton(context),
+        SizedBox(height: 20),
+        elevatedButton(context),
+      ],
+    );
+  }
+
+  //applied jobs tab contents
+  Widget _appliedTab() {
+    return Column();
+  }
+
+  //interview tab contents
+  Widget _interViewTab() {
+    return Column();
+  }
+
+  Widget _archivedTab() {
+    return Column();
+  }
+
+  //find jobs button
   ElevatedButton elevatedButton(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.blue,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(2)),
+        backgroundColor: AppColor.primary,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
       onPressed: () {
         Navigator.push(
@@ -50,10 +86,15 @@ class MyJobsScreen extends StatelessWidget {
         );
       },
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Text(
             "Find jobs",
-            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              fontSize: 20,
+            ),
           ),
           Icon(Icons.arrow_forward, color: Colors.white),
         ],
@@ -70,6 +111,7 @@ class MyJobsScreen extends StatelessWidget {
           builder:
               (context) => AlertDialog(
                 content: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
                       "To keep things tidy we remove saved jobs that are older than 6 months.",
