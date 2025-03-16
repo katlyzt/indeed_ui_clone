@@ -23,7 +23,7 @@ class ResumeMoreField extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
-                fontSize: 30,
+                fontSize: 25,
               ),
             ),
             IconButton(onPressed: () {}, icon: Icon(Icons.add, size: 30)),
@@ -38,7 +38,7 @@ class ResumeMoreField extends StatelessWidget {
             borderRadius: BorderRadius.circular(5),
             border: Border.all(color: AppColor.grey),
           ),
-          child: Text(content, style: TextStyle(fontSize: 25)),
+          child: Text(content, style: TextStyle(fontSize: 20)),
         ),
       ],
     );

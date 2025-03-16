@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:indeed_clone/constants/colors/colors.dart';
+import 'package:indeed_clone/view/bottom_navigation.dart';
 import 'package:indeed_clone/view/homescreen/home_screen.dart';
 import 'package:indeed_clone/view/profile/resume_more.dart';
 
@@ -35,7 +36,7 @@ class InboxMessage extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                  MaterialPageRoute(builder: (context) => BottomNavigation()),
                 );
               },
               child: Text(

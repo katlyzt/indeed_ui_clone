@@ -110,7 +110,7 @@ class ResumeMore extends StatelessWidget {
               SizedBox(width: 5),
               Text(
                 "Searchable",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               VerticalDivider(color: Colors.black),
               IconButton(onPressed: () {}, icon: Icon(Icons.more_horiz)),
