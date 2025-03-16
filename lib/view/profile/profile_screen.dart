@@ -6,6 +6,7 @@ import 'package:indeed_clone/view/profile/job_preferences_screen.dart';
 import 'package:indeed_clone/view/profile/profile_details_screen.dart';
 import 'package:indeed_clone/view/profile/qualification_screen.dart';
 import 'package:indeed_clone/view/profile/readytowork_screen.dart';
+import 'package:indeed_clone/view/profile/resume_more.dart';
 
 class ProfileScreen extends StatelessWidget {
   ProfileScreen({super.key});
@@ -140,7 +141,15 @@ class ProfileScreen extends StatelessWidget {
               ],
             ),
           ),
-          InkWell(onTap: () {}, child: Icon(Icons.arrow_forward_ios)),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ResumeMore()),
+              );
+            },
+            child: Icon(Icons.arrow_forward_ios),
+          ),
         ],
       ),
     );
