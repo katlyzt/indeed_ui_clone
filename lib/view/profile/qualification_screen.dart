@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:indeed_clone/view/profile/widgets/custom_drawer.dart';
 import 'package:indeed_clone/view/profile/widgets/preferences_constant.dart';
 
 class QualificationScreen extends StatelessWidget {
@@ -8,6 +9,7 @@ class QualificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
+      endDrawer: CustomDrawer(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),

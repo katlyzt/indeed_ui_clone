@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:indeed_clone/constants/colors/colors.dart';
 import 'package:indeed_clone/constants/widgets/job_card.dart';
+import 'package:indeed_clone/view/homescreen/widgets/job_details_sheet.dart';
+import 'package:super_bullet_list/bullet_list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,16 +15,33 @@ class HomeScreen extends StatelessWidget {
         children: [
           searchBar(),
           titleText(),
-          JobCard(
-            nav: () {},
-            jobTitle: "Software Engineer",
-            company: "Google",
-            rating: 4.8,
-            location: "Kochi, Ernakulam",
-            salaryRange: "₹12000 - ₹16000",
-            tags: ["Full-time", "Remote"],
-            applyText: "Easily apply",
-            activeStatus: "Active 1 day ago",
+          ...List.generate(
+            10,
+            (index) => JobCard(
+              nav:
+                  () => JobDetailsSheet.show(
+                    context,
+                    jobTitle: "Software Engineer at Google",
+                    location: "Kochi, Ernakulam",
+                    salary: "₹12000 - ₹16000",
+                    jobDetails: [
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                      "Pellentesque vehicula fermentum eros, non volutpat tortor ultricies sed.",
+                    ],
+                    fullJobDetails: [
+                      "Curabitur ut odio non eros consequat consectetur.",
+                      "Fusce id turpis nec urna ultricies tincidunt eget a odio.",
+                    ],
+                  ),
+              jobTitle: "Software Engineer",
+              company: "Google",
+              rating: 4.8,
+              location: "Kochi, Ernakulam",
+              salaryRange: "₹12000 - ₹16000",
+              tags: ["Full-time", "Remote"],
+              applyText: "Easily apply",
+              activeStatus: "Active 1 day ago",
+            ),
           ),
         ],
       ),

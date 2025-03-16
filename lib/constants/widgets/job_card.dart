@@ -56,12 +56,10 @@ class _JobCardState extends State<JobCard> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            /// === LEFT SIDE ===
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  /// Job Title
                   Text(
                     widget.jobTitle,
                     style: const TextStyle(
@@ -71,7 +69,6 @@ class _JobCardState extends State<JobCard> {
                   ),
                   const SizedBox(height: 4),
 
-                  /// Company Name + Rating
                   Row(
                     children: [
                       Text(
@@ -94,14 +91,12 @@ class _JobCardState extends State<JobCard> {
                   ),
                   const SizedBox(height: 4),
 
-                  /// Location
                   Text(
                     widget.location,
                     style: const TextStyle(fontSize: 16, color: Colors.black87),
                   ),
                   const SizedBox(height: 6),
 
-                  /// Salary Range
                   _buildTag(
                     text: widget.salaryRange,
                     backgroundColor: AppColor.greenContainer,
@@ -110,7 +105,6 @@ class _JobCardState extends State<JobCard> {
 
                   const SizedBox(height: 6),
 
-                  /// Tags (e.g., Part-time, Remote)
                   Wrap(
                     spacing: 6,
                     children:
@@ -125,7 +119,6 @@ class _JobCardState extends State<JobCard> {
 
                   const SizedBox(height: 6),
 
-                  /// Apply Text
                   Row(
                     children: [
                       Icon(Icons.send, color: AppColor.primary, size: 20),
@@ -139,7 +132,6 @@ class _JobCardState extends State<JobCard> {
 
                   const SizedBox(height: 4),
 
-                  /// Active Status
                   Text(
                     widget.activeStatus,
                     style: const TextStyle(fontSize: 14, color: Colors.grey),
@@ -148,10 +140,8 @@ class _JobCardState extends State<JobCard> {
               ),
             ),
 
-            /// === RIGHT SIDE ===
             Column(
               children: [
-                /// Bookmark Icon (Toggle)
                 IconButton(
                   onPressed: () {
                     setState(() {
@@ -160,15 +150,11 @@ class _JobCardState extends State<JobCard> {
                   },
                   icon: Icon(
                     isBookmarked ? Icons.bookmark : Icons.bookmark_outline,
-                    color:
-                        isBookmarked
-                            ? AppColor.primary
-                            : Colors.black87, // Toggle color
+                    color: isBookmarked ? AppColor.primary : Colors.black87,
                     size: 32,
                   ),
                 ),
 
-                /// Block Icon
                 const Icon(Icons.block, size: 32),
               ],
             ),
@@ -178,7 +164,6 @@ class _JobCardState extends State<JobCard> {
     );
   }
 
-  /// === Reusable Tag Builder ===
   Widget _buildTag({
     required String text,
     required Color backgroundColor,

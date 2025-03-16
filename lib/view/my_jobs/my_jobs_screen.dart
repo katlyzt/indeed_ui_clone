@@ -12,27 +12,31 @@ class MyJobsScreen extends StatelessWidget {
     return DefaultTabController(
       length: 4,
       child: Column(
-        children: [_buildTabBar(), Expanded(child: _buildTabBarView(context))],
+        children: [
+          SizedBox(height: 10),
+          _buildTabBar(),
+          Expanded(child: _buildTabBarView(context)),
+        ],
       ),
     );
   }
 
-  // ====================== TAB BAR ======================
+  // tab bar
   Widget _buildTabBar() {
     return TabBar(
       labelColor: AppColor.primary,
       isScrollable: true,
       tabAlignment: TabAlignment.start,
       tabs: const [
-        Text("Saved"),
-        Text("Applied"),
-        Text("Interviews"),
-        Text("Archived"),
+        Text("Saved", style: TextStyle(fontSize: 15)),
+        Text("Applied", style: TextStyle(fontSize: 15)),
+        Text("Interviews", style: TextStyle(fontSize: 15)),
+        Text("Archived", style: TextStyle(fontSize: 15)),
       ],
     );
   }
 
-  // ====================== TAB BAR VIEW ======================
+  // tab bar view
   Widget _buildTabBarView(BuildContext context) {
     return TabBarView(
       children: [
@@ -44,7 +48,7 @@ class MyJobsScreen extends StatelessWidget {
     );
   }
 
-  // ====================== SAVED TAB ======================
+  // saved tab
   Widget _savedTab(BuildContext context) {
     return Column(
       children: [
@@ -94,10 +98,9 @@ class MyJobsScreen extends StatelessWidget {
     );
   }
 
-  // ====================== APPLIED TAB ======================
+  // applied tab
   Widget _appliedTab(BuildContext context) {
     return Column(
-      // mainAxisAlignment: MainAxisAlignment.center,
       children: [
         EmptyStateCard(
           imagePath: "assets/images/indeed 2.jpg",
@@ -148,7 +151,7 @@ class MyJobsScreen extends StatelessWidget {
     );
   }
 
-  // ====================== INTERVIEW TAB ======================
+  // interview tab
   Widget _interviewTab(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
@@ -197,7 +200,7 @@ class MyJobsScreen extends StatelessWidget {
     );
   }
 
-  // ====================== ARCHIVED TAB ======================
+  // archived tab
   Widget _archivedTab(BuildContext context) {
     return Column(
       children: [

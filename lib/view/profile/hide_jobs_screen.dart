@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:indeed_clone/constants/colors/colors.dart';
+import 'package:indeed_clone/view/profile/widgets/custom_drawer.dart';
 
 class HideJobsScreen extends StatelessWidget {
   const HideJobsScreen({super.key});
@@ -8,6 +9,7 @@ class HideJobsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
+      endDrawer: CustomDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: Column(

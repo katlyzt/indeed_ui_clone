@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:indeed_clone/constants/colors/colors.dart';
+import 'package:indeed_clone/view/profile/widgets/custom_drawer.dart';
 import 'package:indeed_clone/view/profile/widgets/resume_more_field.dart';
 
 class ResumeMore extends StatelessWidget {
@@ -8,7 +9,20 @@ class ResumeMore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          Builder(
+            builder:
+                (context) => IconButton(
+                  onPressed: () => Scaffold.of(context).openEndDrawer(),
+                  icon: Icon(Icons.menu),
+                ),
+          ),
+          SizedBox(width: 10),
+        ],
+      ),
+      endDrawer: CustomDrawer(),
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
@@ -17,7 +31,7 @@ class ResumeMore extends StatelessWidget {
             children: [
               searchableContainer(),
               SizedBox(height: 10),
-              nameText(), //name and icon
+              nameText(),
               detailsText(),
               ResumeMoreField(
                 title: "Summary",
