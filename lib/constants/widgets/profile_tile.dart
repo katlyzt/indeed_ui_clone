@@ -9,7 +9,7 @@ class ProfileTile extends StatelessWidget {
   });
   final String title;
   final String content;
-  final VoidCallback navigation;
+  final Function(BuildContext) navigation;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class ProfileTile extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {
-                navigation();
+                navigation(context);
               },
               icon: Icon(Icons.arrow_forward_ios),
             ),

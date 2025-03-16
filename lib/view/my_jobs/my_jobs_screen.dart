@@ -3,8 +3,6 @@ import 'package:indeed_clone/constants/colors/colors.dart';
 import 'package:indeed_clone/constants/widgets/empty_state_card.dart';
 import 'package:indeed_clone/constants/widgets/setup_container.dart';
 import 'package:indeed_clone/view/bottom_navigation.dart';
-import 'package:super_bullet_list/bullet_list.dart';
-import 'package:super_bullet_list/bullet_style.dart';
 
 class MyJobsScreen extends StatelessWidget {
   const MyJobsScreen({super.key});

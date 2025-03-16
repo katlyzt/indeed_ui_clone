@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:indeed_clone/constants/colors/colors.dart';
 import 'package:indeed_clone/constants/widgets/profile_tile.dart';
+import 'package:indeed_clone/view/profile/hide_jobs_screen.dart';
+import 'package:indeed_clone/view/profile/job_preferences_screen.dart';
 import 'package:indeed_clone/view/profile/profile_details_screen.dart';
+import 'package:indeed_clone/view/profile/qualification_screen.dart';
+import 'package:indeed_clone/view/profile/readytowork_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   ProfileScreen({super.key});
@@ -9,24 +13,44 @@ class ProfileScreen extends StatelessWidget {
     {
       "title": 'Qualification',
       "content": 'Highlight your skills and experience.',
-      "navigation": () {},
+      "navigation": (BuildContext context) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => QualificationScreen()),
+        );
+      },
     },
     {
       "title": 'Job preferences',
       "content": 'Save specific details like minimum desired pay and schedule.',
-      "navigation": () {},
+      "navigation": (BuildContext context) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => JobPreferencesScreen()),
+        );
+      },
     },
     {
       "title": 'Hide jobs with these details',
       "content":
           'Manage the qualifications or preferences used to hide jobs from your search.',
-      "navigation": () {},
+      "navigation": (BuildContext context) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => HideJobsScreen()),
+        );
+      },
     },
     {
       "title": 'Ready to work',
       "content":
           'Let employees know that you are available to start working as soon as possible.',
-      "navigation": () {},
+      "navigation": (BuildContext context) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ReadytoworkScreen()),
+        );
+      },
     },
   ];
 

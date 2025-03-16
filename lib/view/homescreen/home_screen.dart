@@ -9,7 +9,21 @@ class HomeScreen extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [searchBar(), titleText(), JobCard()],
+        children: [
+          searchBar(),
+          titleText(),
+          JobCard(
+            nav: () {},
+            jobTitle: "Software Engineer",
+            company: "Google",
+            rating: 4.8,
+            location: "Kochi, Ernakulam",
+            salaryRange: "₹12000 - ₹16000",
+            tags: ["Full-time", "Remote"],
+            applyText: "Easily apply",
+            activeStatus: "Active 1 day ago",
+          ),
+        ],
       ),
     );
   }
